@@ -4,7 +4,6 @@ import android.app.PendingIntent
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
-import android.os.SystemClock
 import androidx.core.app.NotificationCompat
 import com.rohitTheBest.forgroundservicewithnotification.Constants.CHANNEL_ID
 import com.rohitTheBest.forgroundservicewithnotification.Constants.MESSAGE_KEY
@@ -40,14 +39,14 @@ class ForegroundService : Service() {
 
         //For heavy operation start new thread
 
-        SystemClock.sleep(5000)
+        /*SystemClock.sleep(5000)
         stopSelf()  //Will stop all the services itself
-
+*/
         return START_NOT_STICKY  //will not start the service again
     }
 
 
-    //After a service is stopped onDestroy() is called
+    //After a service is stopped onDestroy() method is called
     override fun onDestroy() {
         super.onDestroy()
     }
